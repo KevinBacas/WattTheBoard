@@ -7,10 +7,14 @@ class RowDiplayer extends Component {
     let tableRowStyle = {
       'background-color': '#40BB6A',
       color: 'white',
-    }
+    };
+
+    let firstColumnStyle = {
+      width: '1%',
+    };
 
     return <TableRow style={this.props.stripped ? tableRowStyle : undefined }>
-      <TableRowColumn><h2>{this.props.number || 1}</h2></TableRowColumn>
+      <TableRowColumn style={firstColumnStyle}><h2>{this.props.number || 1}</h2></TableRowColumn>
       <TableRowColumn><h2>{this.props.pseudo || 'John Doe'}</h2></TableRowColumn>
       <TableRowColumn><h2>{this.props.score}</h2></TableRowColumn>
       <TableRowColumn><h2>{this.props.time + ' s'}</h2></TableRowColumn>

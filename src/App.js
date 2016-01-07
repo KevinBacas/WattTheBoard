@@ -68,6 +68,7 @@ class App extends Component {
 
     let titleStyle = {
       'text-align': 'center',
+      width: '100%',
     }
 
     let fontIconsStyle = {
@@ -87,6 +88,14 @@ class App extends Component {
       color: '#F9A72B',
     };
 
+    let firstColumnStyle = {
+      width: '1%',
+    };
+
+    let columnStyle = {
+      'background-color': 'white',
+    }
+
     return this.state.data.length > 0 ? <Table
       fixedHeader={true}
       selectable={false}>
@@ -94,43 +103,47 @@ class App extends Component {
         displaySelectAll={false}
         adjustForCheckbox={false}>
         <TableRow>
-          <TableHeaderColumn style={{textAlign: 'center'}}>
-            <h1 style={titleStyle}>WattThePark - le parc au courant</h1>
-          </TableHeaderColumn>
-        </TableRow>
-        <TableRow>
-          <TableHeaderColumn tooltip='Le rang'>
-          </TableHeaderColumn>
-          <TableHeaderColumn tooltip='Le pseudo'>
-          <h1 style={styleGreen}>
-            <FontIcon className="material-icons" style={Object.assign({}, fontIconsStyle, styleGreen)}>mood</FontIcon> Pseudo
-          </h1>
-          </TableHeaderColumn>
-          <TableHeaderColumn tooltip='Le score'>
-          <h1 style={styleGreen}>
-            <FontIcon className="material-icons" style={Object.assign({}, fontIconsStyle, styleGreen)}>grade</FontIcon> Score
-          </h1>
-          </TableHeaderColumn>
-          <TableHeaderColumn tooltip='Le temps'>
-          <h1 style={styleGreen}>
-            <FontIcon className="material-icons" style={Object.assign({}, fontIconsStyle, styleGreen)}>alarm_on</FontIcon> Temps
-          </h1>
-          </TableHeaderColumn>
-          <TableHeaderColumn tooltip='L&apos;energie générée'>
-          <h1 style={styleYellow}>
-            <FontIcon className="material-icons" style={Object.assign({}, fontIconsStyle, styleYellow)}>flash_on</FontIcon> Energie générée
-          </h1>
-          </TableHeaderColumn>
-          <TableHeaderColumn tooltip='La note'>
-          <h1 style={styleGreen}>
-            <FontIcon className="material-icons" style={Object.assign({}, fontIconsStyle, styleGreen)}>sms</FontIcon> Note
-          </h1>
-          </TableHeaderColumn>
+          <h1 style={titleStyle}>WattThePark - le parc au courant</h1>
         </TableRow>
       </TableHeader>
       <TableBody
         displayRowCheckbox={false}
         stripedRows={true}>
+        <TableRow
+          style={columnStyle}>
+          <TableRowColumn style={firstColumnStyle}>
+          </TableRowColumn>
+          <TableRowColumn
+            style={columnStyle}>
+          <h1 style={styleGreen}>
+            <FontIcon className="material-icons" style={Object.assign({}, fontIconsStyle, styleGreen)}>mood</FontIcon> Pseudo
+          </h1>
+          </TableRowColumn>
+          <TableRowColumn
+            style={columnStyle}>
+          <h1 style={styleGreen}>
+            <FontIcon className="material-icons" style={Object.assign({}, fontIconsStyle, styleGreen)}>grade</FontIcon> Score
+          </h1>
+          </TableRowColumn>
+          <TableRowColumn
+            style={columnStyle}>
+          <h1 style={styleGreen}>
+            <FontIcon className="material-icons" style={Object.assign({}, fontIconsStyle, styleGreen)}>alarm_on</FontIcon> Temps
+          </h1>
+          </TableRowColumn>
+          <TableRowColumn
+            style={columnStyle}>
+          <h1 style={styleYellow}>
+            <FontIcon className="material-icons" style={Object.assign({}, fontIconsStyle, styleYellow)}>flash_on</FontIcon> Energie générée
+          </h1>
+          </TableRowColumn>
+          <TableRowColumn
+            style={columnStyle}>
+          <h1 style={styleGreen}>
+            <FontIcon className="material-icons" style={Object.assign({}, fontIconsStyle, styleGreen)}>sms</FontIcon> Message
+          </h1>
+          </TableRowColumn>
+        </TableRow>
         {rows}
       </TableBody>
       <TableFooter>
