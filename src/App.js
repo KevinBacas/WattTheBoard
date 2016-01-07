@@ -27,7 +27,7 @@ class App extends Component {
 
   loadData() {
     let _this = this;
-    $.get('http://0.0.0.0:8000/top/50').success((data) => {
+    $.get('http://0.0.0.0:3000/top/50').success((data) => {
       data = JSON.parse(data);
       _this.setState({
         data,
